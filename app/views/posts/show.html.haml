@@ -1,0 +1,53 @@
+.row
+  .col-md-12
+    .container-inner
+      %h1.main-title.single-title.entry-title
+        = @post.title
+      .row#control_wrapper
+        .col-md-8.single-post-selector
+          .single-page
+            .post-content.post-selector.active
+              .aa_item_info_block.aa_top_info_block
+                .postinfo.pull-right
+                  .post-categories
+                    .category-list
+                      %span.aa_cat_name_block
+                        = link_to @post.category.name
+                %a.aa_postauthor_link{:href => "#"}
+                  = image_tag @post.user.avatar,size: "32x32", class: "avatar avatar-32 photo"
+                  %span
+                    by
+                    %span.aa_item_author 
+                      = @post.user.username
+                %span.aa_item_time 
+                  - if @post.created_at > Time.now.beginning_of_day
+                    = "#{time_ago_in_words(@post.created_at)} ago"
+                  - else
+                    = @post.created_at.strftime("%b %d, %Y")
+              .aa_item_info_block.aa_top_info_block        
+                .single_share_block.single_post_additional_block.short
+                  .aa_socials.single_socs.clearfix
+                    %a.soc.fb.window.activated{:href => "https://www.facebook.com/sharer.php?app_id=598473026880919&u=http://www.androidauthority.com/samsung-pay-early-access-registrations-now-open-india-754530/&t=Samsung+Pay+early+access+registrations+now+open+in+India", :rel => "me", :target => "_blank", :title => "Share on Facebook"}
+                      %i.fa.fa-facebook-official
+                    %a.soc.tw.window.activated{:href => "https://twitter.com/intent/tweet?url=http://www.androidauthority.com/samsung-pay-early-access-registrations-now-open-india-754530/&text=Samsung+Pay+early+access+registrations+now+open+in+India", :rel => "me", :target => "_blank", :title => "Share on Twitter"}
+                      %i.fa.fa-twitter
+                    %a.soc.g.window.activated{:href => "https://plus.google.com/share?url=http://www.androidauthority.com/samsung-pay-early-access-registrations-now-open-india-754530/", :rel => "me", :target => "_blank", :title => "Share on Google +"}
+                      %i.fa.fa-youtube
+              %p            
+                = image_tag @post.image
+              %p
+                = @post.description.html_safe
+              .aa_item_info_block.aa_bottom_info_block
+                .postinfo
+                  .post-categories
+                    .category-list
+                      %span.aa_cat_name_block
+                        %a{:href => "http://www.androidauthority.com/news/", :title => "View all posts in News"} News
+                  .aa-item-icon.aa-item-tags.post-tags
+                    .tag-list
+                      %i.fa.fa-tags
+                      = raw @post.tag_list.map { |t| link_to t, tag_path(t),class: "nuans-neo-reloaded" }.join(', ') 
+                .aa_source_link_wrapper.aa-item-icon.aa_item_source
+                  %a.aa_source_link{:href => "https://neo.nuans.jp/reloaded/?lang=en", :rel => "nofollow", :target => "_blank"} Trinity
+                .aa_via_link_wrapper.aa-item-icon.aa_item_via
+                  %a.aa_via_link{:href => "https://www.engadget.com/2017/03/02/nuans-neo-reloaded-android/", :rel => "nofollow", :target => "_blank"} Engadget

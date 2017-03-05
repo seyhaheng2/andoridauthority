@@ -1,0 +1,273 @@
+p img{
+  max-width: 100%;
+  height: auto;
+}
+h1.main-title { 
+  margin: 20px 2px 25px;
+}
+h1.main-title, h1.page-title, .billboard-wrapper h1.main-title {
+  color: #3f3f3f !important;
+  font-family: Open Sans ,sans-serif;
+  font-weight: 800 !important;
+  font-size: 3em;
+  letter-spacing: -1.5pt;
+  text-transform: none;
+  line-height: 50px;
+}
+.aa_item_info_block{
+  padding-bottom:10px;
+}
+.single-page p {
+  font-family: Open Sans,sans-serif;
+  font-size: 17px;
+  color: #787878;
+  margin: 0 0 17px;
+}
+.single-page p, .single-page ul li, .single-page ol li {
+  line-height: 29px;
+  letter-spacing: -0.015em;
+} 
+.single-page p a {
+  font-family: Open Sans ,sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  color: #53cc39;
+  &:hover{
+    text-decoration: none;
+    color: #3f3f3f !important;
+  }
+}
+.aa_postauthor_link {
+  margin: 0 20px 0 0px;
+  position: relative;
+}
+.postinfo {
+  display: inline-block;
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+.postinfo .post-categories {
+  margin-bottom: 10px;
+}
+.postinfo .category-list, .postinfo .tag-list, .postinfo a {
+  font-size: 12px;
+  color: #999;
+}
+span.aa_cat_name_block {
+  background-color: #55cc3a;
+}
+span.aa_cat_name_block, div.aa_cat_name_block {
+  color: #fff;
+  border-radius: 3px;
+  display: inline-block;
+  padding: 7px 12px;
+  text-transform: uppercase;
+  font-family: Open Sans Bold,sans-serif;
+  font-size: 12px !important;
+  line-height: 18px;
+  height: 32px;
+  letter-spacing: .04em;
+}
+span.aa_cat_name_block a, div.aa_cat_name_block a {
+  color: #fff !important;
+}
+.aa_item_info_block span, .content-panel .loop-info-wrapper .bottom-loop-info {
+  color: #9d9d9d;
+  font-family: Open Sans,sans-serif;
+  font-size: 12px;
+  letter-spacing: -0.02em;
+  margin-right: 10px;
+  position: relative;
+  display: inline-block;
+  font-weight: 600;
+}
+.aa_postauthor_link img {
+  border-radius: 50%;
+  margin-right: 10px;
+}
+.aa_postauthor_link span.aa_item_author {
+  font-family: Open Sans,sans-serif;
+  color: #6b6b6b;
+  font-weight: 600;
+}
+a:hover{
+  text-decoration: none;
+}
+.aa_postauthor_link:after {
+  content: '.';
+  display: block;
+  position: absolute;
+  right: -12px;
+  top: -18px;
+  font-size: 24px;
+  color: #9d9d9d;
+}
+.single-post-selector .aa_item_info_block .single_share_block, .billboard-wrapper .single_share_block {
+    position: absolute;
+    left: -35px;
+    top: 374px;
+}
+.single_share_block {
+    display: inline-block;
+    float: right;
+    min-width: auto;
+    width: auto;
+    padding: 0;
+    top: auto;
+}
+.single-post-selector .aa_item_info_block .aa_socs_total, .billboard-wrapper .single_share_block .aa_socs_total {
+    display: block;
+    position: absolute;
+    bottom: -36px;
+    right: 0;
+    background: #55cc3a;
+    height: 36px;
+    border-radius: 2px;
+    padding-top: 9px;
+    text-align: center;
+    font-family: Open Sans Extrabold,sans-serif;
+    color: #fff;
+    font-size: 12px;
+    width: 36px;
+    max-width: 36px;
+}
+.single-post-selector .aa_item_info_block .single_socs .soc, .single-post-selector .aa_item_info_block .short .single_socs .soc, .billboard-wrapper .single_share_block .single_socs .soc {
+    float: none;
+    display: block;
+    margin-bottom: 10px;
+    margin-left: 0;
+    border-radius: 2px;
+}
+.single_socs .soc.fb {
+    background-color: #506cb3;
+}
+.single_socs .soc.tw {
+    background-color: #59bef1;
+}
+.single_socs .soc.g {
+    background-color: #cd3627;
+}
+.single_socs .soc, .short .single_socs .soc {
+    box-shadow: none;
+    float: right;
+    margin-left: 10px;
+    padding: 8px 5px 0;
+    width: 36px;
+    height: 36px;
+    text-align: center;
+    border-radius: 2px;
+}
+.single_socs .soc, .short .single_socs .soc a i{
+    color: #fff;
+    font-size: 1.6em;
+}
+.single-page .aa_item_info_block.aa_bottom_info_block {
+    border-bottom: 0;
+    border-top: 1px solid #eaebec;
+    margin: 20px 0 14px;
+    padding: 22px 0 14px;
+}
+.aa_bottom_info_block .postinfo {
+    width: 100%;
+}
+.postinfo {
+    display: inline-block;
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+.postinfo .post-categories {
+    margin-bottom: 10px;
+}
+.postinfo .category-list, .postinfo .tag-list, .postinfo a {
+    font-size: 12px;
+    color: #999;
+}
+.single span.aa_cat_name_block {
+    background-color: #55cc3a;
+}
+span.aa_cat_name_block a, div.aa_cat_name_block a {
+    color: #fff !important;
+}
+.aa_bottom_info_block .postinfo .post-categories, .aa_bottom_info_block .postinfo .post-tags {
+    display: block;
+    float: left;
+}
+.postinfo .post-tags {
+    font-family: Open Sans,sans-serif;
+    padding-left: 0;
+    position: relative;
+    font-weight: 600;
+    i{
+      font-size: 18px;
+      -ms-transform: rotate(90deg); /* IE 9 */
+      -webkit-transform: rotate(90deg); /* Chrome, Safari, Opera */
+      transform: rotate(90deg);
+    }
+}
+.postinfo .category-list, .postinfo .tag-list, .postinfo a {
+    font-size: 12px;
+    color: #999;
+}
+.aa_bottom_info_block .tag-list {
+    margin-top: 5px;
+    margin-left: 10px;
+}
+.postinfo .post-tags a {
+    font-size: 13px;
+    font-weight: 600;
+    margin-left: 5px;
+}
+.postinfo .aa-item-tags:before {
+    position: absolute;
+    left: 0;
+    top: 9px;
+}
+.aa-item-tags:before {
+    margin-right: 13px;
+    color: #aaa;
+}
+.tag-list a {
+    color: #53cc39;
+    text-decoration: none;
+    transition: color .2s ease-out;
+    -webkit-transition: color .2s ease-out;
+}
+.aa_item_source:before {
+    content: 'Source: ';
+}
+.aa_item_via:before {
+    content: 'Via: ';
+}
+.aa_item_source:before, .aa_item_via:before {
+    margin-right: 6px;
+    font-size: 13px;
+    font-family: Open Sans Semibold,sans-serif;
+    color: #9d9d9d;
+    background: 0;
+    width: auto;
+    position: relative;
+    bottom: 0;
+    left: 5px;
+}
+.aa_source_link_wrapper, .aa_via_link_wrapper {
+    display: inline-block;
+    margin-top: 2px;
+    padding-left: 0;
+    position: relative;
+    margin-left: -3px;
+    font-weight: 600;
+}
+.aa_item_source:after {
+    content: '\2022';
+    position: relative;
+    font-size: 13px;
+    font-family: Open Sans ,sans-serif;
+    color: #9d9d9d;
+    margin-left: 10px;
+    margin-right: 7px;
+}
+a.aa_source_link, a.aa_via_link{
+  color: #53cc39;
+}

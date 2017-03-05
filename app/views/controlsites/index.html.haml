@@ -1,0 +1,43 @@
+%h1 Listing controlsites
+
+%table
+  %thead
+    %tr
+      %th Logo
+      %th Facebook
+      %th Twitter
+      %th Youtube
+      %th Pinterest
+      %th Google
+      %th Plus
+      %th Ads1
+      %th Ads2
+      %th Ads3
+      %th Ads4
+      %th Post
+      %th
+      %th
+      %th
+
+  %tbody
+    - @controlsites.each do |controlsite|
+      %tr
+        %td= controlsite.logo
+        %td= controlsite.facebook
+        %td= controlsite.twitter
+        %td= controlsite.youtube
+        %td= controlsite.pinterest
+        %td= controlsite.google
+        %td= controlsite.plus
+        %td= controlsite.ads1
+        %td= controlsite.ads2
+        %td= controlsite.ads3
+        %td= controlsite.ads4
+        %td= controlsite.post
+        %td= link_to 'Show', controlsite
+        %td= link_to 'Edit', edit_controlsite_path(controlsite)
+        %td= link_to 'Destroy', controlsite, :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+%br
+
+= link_to 'New Controlsite', new_controlsite_path

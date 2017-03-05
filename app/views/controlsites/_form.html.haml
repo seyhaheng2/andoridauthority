@@ -1,0 +1,46 @@
+= form_for @controlsite do |f|
+  - if @controlsite.errors.any?
+    #error_explanation
+      %h2= "#{pluralize(@controlsite.errors.count, "error")} prohibited this controlsite from being saved:"
+      %ul
+        - @controlsite.errors.full_messages.each do |msg|
+          %li= msg
+
+  .field
+    = f.label :logo
+    = f.text_field :logo
+  .field
+    = f.label :facebook
+    = f.text_field :facebook
+  .field
+    = f.label :twitter
+    = f.text_field :twitter
+  .field
+    = f.label :youtube
+    = f.text_field :youtube
+  .field
+    = f.label :pinterest
+    = f.text_field :pinterest
+  .field
+    = f.label :google
+    = f.text_field :google
+  .field
+    = f.label :plus
+    = f.text_field :plus
+  .field
+    = f.label :ads1
+    = f.text_area :ads1
+  .field
+    = f.label :ads2
+    = f.text_area :ads2
+  .field
+    = f.label :ads3
+    = f.text_area :ads3
+  .field
+    = f.label :ads4
+    = f.text_area :ads4
+  .field
+    = f.label :post
+    = f.text_field :post
+  .actions
+    = f.submit 'Save'

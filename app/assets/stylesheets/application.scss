@@ -1,0 +1,33 @@
+@import "bootstrap-sprockets";
+@import "bootstrap";
+@import "font-awesome";
+@import "bourbon";
+@import "neat";
+@import "header";
+@import "slide";
+@import "mediaquery";
+@import "post";
+@import "show";
+@import "sidebar";
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,700,800,800i');
+
+
+body {
+  -webkit-font-smoothing: antialiased !important;
+  -moz-osx-font-smoothing: grayscale !important;
+  text-shadow: 1px 1px 6px rgba(0,0,0,.05);
+  text-rendering: optimizeLegibility !important;
+  margin: 0;
+  background-color: #fff;
+  color: #3f3f3f;
+  font-size: 14px;
+  line-height: 1.42857143;
+}
+.container-inner {
+  max-width: 1000px;
+  padding: 0 10px;
+  margin: 0 auto;
+}
+.header_tweaks {
+    top: -73px !important;
+}

@@ -1,0 +1,136 @@
+%html
+  %head
+    %title= @meta_title
+    %meta{:content => "#{@meta_description}", :name => "description"}
+    = csrf_meta_tags 
+    = stylesheet_link_tag    'application', media: 'all' 
+    = javascript_include_tag 'application'
+%body
+  - @social.each do |p|
+    - if p.ads4.present?
+      %center.adsfixed
+        #adholder
+          #ad{:style => "background:#000;width:300px;height:auto;"}
+            = p.ads4.html_safe
+            %img{:src => "https://lh3.googleusercontent.com/-1cqCUhylYcs/V5XRVj94upI/AAAAAAAAAso/f7HeT0UjGoE4ZRy7WOFjRRiMuxpHBBYpwCL0B/w302-h42-no/Amazing-Hotel.jpg"}
+      .topbar_block#sticky-bar
+        .brand-logo
+          = link_to "", root_path, class: "sticky-logo"
+        %nav.standard-menu
+          %ul
+            - @categories.each do |cate|
+              %li 
+                = link_to cate.name, cate
+            %li 
+              %a{:href => "#",class: "more"} More
+              %nav#section-menu-more
+                %ul
+                  - @subcategories.each do |sub|
+                    %li
+                      = link_to sub.name, sub
+        %nav.social-share.pull-right
+          %ul
+            - @social.each do |f|
+              %li.none
+                - if f.facebook.present?
+                  = link_to f.facebook, target: :_blank do
+                    %i.fa.fa-facebook
+              %li.none
+                - if f.twitter.present?
+                  = link_to f.twitter, target: :_blank do
+                    %i.fa.fa-twitter
+              %li.none
+                - if f.youtube.present?
+                  = link_to f.youtube, target: :_blank do
+                    %i.fa.fa-youtube
+              %li.none
+                - if f.pinterest.present?
+                  = link_to f.pinterest, target: :_blank do
+                    %i.fa.fa-pinterest
+              %li.none
+                - if f.google.present?
+                  = link_to f.google, target: :_blank do
+                    %i.fa.fa-google-plus
+
+              %li.search
+                %a{:href => "#"}
+                  %i.fa.fa-search
+      .sub-topbar-block
+        .clearfix
+          .trending-title
+            Trending
+          %ul
+            %li
+              %a{:href => "#"} MWC 2017
+            %li
+              %a{:href => "#"} LG G6
+            %li
+              %a{:href => "#"} PIXEL xl
+    - else
+      .topbar#sticky-bar
+        .brand-logo
+          = link_to "", root_path, class: "sticky-logo"
+        %nav.standard-menu
+          %ul
+            - @categories.each do |cate|
+              %li 
+                = link_to cate.name, cate
+            %li 
+              %a{:href => "#",class: "more"} More
+              %nav#section-menu-more
+                %ul
+                  - @subcategories.each do |sub|
+                    %li
+                      = link_to sub.name, sub
+        %nav.social-share.pull-right
+          %ul
+            - @social.each do |f|
+              %li.none
+                - if f.facebook.present?
+                  = link_to f.facebook, target: :_blank do
+                    %i.fa.fa-facebook
+              %li.none
+                - if f.twitter.present?
+                  = link_to f.twitter, target: :_blank do
+                    %i.fa.fa-twitter
+              %li.none
+                - if f.youtube.present?
+                  = link_to f.youtube, target: :_blank do
+                    %i.fa.fa-youtube
+              %li.none
+                - if f.pinterest.present?
+                  = link_to f.pinterest, target: :_blank do
+                    %i.fa.fa-pinterest
+              %li.none
+                - if f.google.present?
+                  = link_to f.google, target: :_blank do
+                    %i.fa.fa-google-plus
+
+              %li.search
+                %a{:href => "#"}
+                  %i.fa.fa-search
+      .sub-topbar
+        .clearfix
+          .trending-title
+            Trending
+          %ul
+            %li
+              %a{:href => "#"} MWC 2017
+            %li
+              %a{:href => "#"} LG G6
+            %li
+              %a{:href => "#"} PIXEL xl
+    
+  = yield 
+      
+
+
+
+
+
+
+
+
+
+
+

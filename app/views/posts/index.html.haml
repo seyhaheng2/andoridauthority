@@ -1,0 +1,89 @@
+.after_header
+  .row
+    .col-md-12
+      .container-inner
+        .slide-top
+          - @slides.each do |post|
+            .post_slide
+              = link_to post, class: 'overlay-link' do
+                .slide_image_wrapper
+                  .slide_image{:style => "background-image: url('#{post.image}')"}
+                  .overlay
+                .slide_footer
+                  .aa_hfp_cat_block.aa_cat_name_block
+                    = link_to post.category.name, root_path 
+                  %h3.aa_hfp_title 
+                    = link_to post.title, post
+                  %span.aa-item-description.aa_hfp_author
+                    by
+                    = link_to post.user.username, '#'
+                  %span.aa_item_time.aa-item-description 
+                    - if post.created_at > Time.now.beginning_of_day
+                      = "#{time_ago_in_words(post.created_at)} ago"
+                    - else
+                      = post.created_at.strftime("%b %d, %Y")
+
+.row.ads1
+  .col-md-8.col-md-offset-2.text-center
+    - @social.each do |p|
+      = p.ads1.html_safe
+.row
+  .col-md-12
+    .container-inner
+      .row#control_wrapper
+        .col-md-8.loop-column
+          .post-container
+            .bar-header.aa_home_bar_header.clearfix
+              .bar-label-wrapper
+                .bar-label
+                  .label-text Latest News
+            .content-inner.clearfix
+              - @posts.each do |post|
+                .loop-panel.content-panel.add-active.content-panel-default.clearfix.category-1
+                  .loop-image-wrapper
+                    = link_to "", post, class: "loop-link"
+                    .loop-image-default.b-lazy.b-loaded.b-loaded{:style => "background-image: url('#{post.image}');"}
+                  .loop-info-wrapper
+                    .loop-info
+                      %h2.article-title.no-padding
+                        = link_to post do
+                          %span.title-text 
+                            = post.title
+                      .aa_item_info_block
+                        .excerpt 
+                          = truncate( raw( sanitize(post.description, :tags => %w(table tr td), :attributes => %w(id class style) ) ), :length => 140, :omission => "...")
+                    .bottom-loop-info
+                      %span
+                        by
+                        = link_to post.user.username, root_path
+                      %span.aa_item_time  
+                        - if post.created_at > Time.now.beginning_of_day
+                          = "#{time_ago_in_words(post.created_at)} ago"
+                        - else
+                          = post.created_at.strftime("%b %d, %Y")
+
+
+
+        .col-md-4
+          .content-panel.loop-sidebar-right
+            .widget.clearfix
+              .ads2
+                - @social.each do |p|
+                  = p.ads2.html_safe
+              #aa_it_latest_articles-7.widget.clearfix
+                .post-container.widget-panel.compact-header.widget_d
+                  .bar-header.clearfix
+                    .bar-label
+                      .label-text
+                        %a{:href => "#"} SUNDAY GIVEAWAY
+                  .content-inner.clearfix
+                    - @trending.each do |post|
+                      .loop.widget-loop
+                        .overlay-panel.add-active.clearfix
+                          .article-image-wrapper.b-lazy.b-loaded{:style => "background: url('#{post.image}');"}
+                          .article-title-wrapper
+                            %h4 
+                              = link_to post do
+                                = truncate(post.title, length: 48)
+                            .aa_item_info_block
+                              %span.aa_item_time 4 days ago
