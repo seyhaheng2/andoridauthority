@@ -1,5 +1,11 @@
 Rails.application.routes.draw do
 
+  get 'page/contact',as: "contact"
+
+  get 'page/about',as: "about"
+
+  get 'page/privacy'
+
   resources :controlsites
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)

@@ -47,7 +47,37 @@
                     .tag-list
                       %i.fa.fa-tags
                       = raw @post.tag_list.map { |t| link_to t, tag_path(t),class: "nuans-neo-reloaded" }.join(', ') 
-                .aa_source_link_wrapper.aa-item-icon.aa_item_source
-                  %a.aa_source_link{:href => "https://neo.nuans.jp/reloaded/?lang=en", :rel => "nofollow", :target => "_blank"} Trinity
-                .aa_via_link_wrapper.aa-item-icon.aa_item_via
-                  %a.aa_via_link{:href => "https://www.engadget.com/2017/03/02/nuans-neo-reloaded-android/", :rel => "nofollow", :target => "_blank"} Engadget
+                - if @post.source.present?
+                  .aa_source_link_wrapper.aa-item-icon.aa_item_source
+                    = link_to @post.source, @post.url_source, class: "aa_source_link", :target => "_blank"
+                - if @post.via.present?
+                  .aa_via_link_wrapper.aa-item-icon.aa_item_via
+                    = link_to @post.via, @post.url_via, class: "aa_via_link", :target => "_blank"
+
+
+          #comments-753924.aa_comments_wrapper.clear
+            .aa_comments_more.primary-button.aa-full-width-button.aa_comments_button{"data-id" => "753924"}
+              %span
+                Show
+                %span.meta-comments.metric.info-right{"data-original-title" => "Comments", :title => ""}
+                  -# %span.numcount
+                comments
+
+          .none          
+            #disqus_thread
+            :javascript
+            
+              var disqus_config = function () {
+              this.page.url = "#{request.original_url}";  
+              this.page.identifier = "#{@post.id}";
+              };
+
+              (function() { // DON'T EDIT BELOW THIS LINE
+              var d = document, s = d.createElement('script');
+              s.src = 'https://xnxx-5.disqus.com/embed.js';
+              s.setAttribute('data-timestamp', +new Date());
+              (d.head || d.body).appendChild(s);
+              })();
+            %noscript
+              Please enable JavaScript to view the
+              %a{:href => "https://disqus.com/?ref_noscript"} comments powered by Disqus.

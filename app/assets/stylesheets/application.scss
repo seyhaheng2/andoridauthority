@@ -3,12 +3,13 @@
 @import "font-awesome";
 @import "bourbon";
 @import "neat";
+@import "mediaquery";
 @import "header";
 @import "slide";
-@import "mediaquery";
 @import "post";
 @import "show";
 @import "sidebar";
+@import "page";
 @import url('https://fonts.googleapis.com/css?family=Open+Sans:400,700,800,800i');
 
 
@@ -29,5 +30,8 @@ body {
   margin: 0 auto;
 }
 .header_tweaks {
-    top: -73px !important;
+  top: -73px !important;
+}
+.fixed{
+  position: fixed !important;
 }

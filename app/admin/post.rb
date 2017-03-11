@@ -1,8 +1,6 @@
 ActiveAdmin.register Post do
 
-  permit_params :title, :image, :description, :user_id, :category_id, :published_at, :format_post, :tag_list
-
-  jcropable
+  permit_params :title, :image, :description, :user_id, :category_id, :published_at, :format_post, :tag_list, :source, :url_source, :via, :url_via
 
   filter :title, as: :string
   filter :format_post, :as => :select
@@ -35,7 +33,7 @@ ActiveAdmin.register Post do
   form do |f|
     inputs "New Post" do
       input :title
-      f.input :image, as: :file,as: :jcropable, hint: f.object.image.present? \
+      f.input :image, as: :file, hint: f.object.image.present? \
         ? f.template.image_tag(f.object.image)
         : f.template.content_tag(:span, "no cover page yet")
       input :description, as: :ckeditor
@@ -43,6 +41,10 @@ ActiveAdmin.register Post do
       input :category
       f.input :format_post, as: :select, :collection => [["Post"],["Slide"],["Trending"]]
       input :tag_list
+      input :source 
+      input :url_source
+      input :via
+      input :url_via
     end
     f.actions
   end

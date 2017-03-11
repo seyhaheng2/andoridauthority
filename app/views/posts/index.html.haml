@@ -38,40 +38,29 @@
                 .bar-label
                   .label-text Latest News
             .content-inner.clearfix
-              - @posts.each do |post|
-                .loop-panel.content-panel.add-active.content-panel-default.clearfix.category-1
-                  .loop-image-wrapper
-                    = link_to "", post, class: "loop-link"
-                    .loop-image-default.b-lazy.b-loaded.b-loaded{:style => "background-image: url('#{post.image}');"}
-                  .loop-info-wrapper
-                    .loop-info
-                      %h2.article-title.no-padding
-                        = link_to post do
-                          %span.title-text 
-                            = post.title
-                      .aa_item_info_block
-                        .excerpt 
-                          = truncate( raw( sanitize(post.description, :tags => %w(table tr td), :attributes => %w(id class style) ) ), :length => 140, :omission => "...")
-                    .bottom-loop-info
-                      %span
-                        by
-                        = link_to post.user.username, root_path
-                      %span.aa_item_time  
-                        - if post.created_at > Time.now.beginning_of_day
-                          = "#{time_ago_in_words(post.created_at)} ago"
-                        - else
-                          = post.created_at.strftime("%b %d, %Y")
-
-
-
-        .col-md-4
+              = render @posts 
+              = paginate @posts
+        .col-md-4.mobile_display
           .content-panel.loop-sidebar-right
             .widget.clearfix
               .ads2
                 - @social.each do |p|
                   = p.ads2.html_safe
               #aa_it_latest_articles-7.widget.clearfix
-                .post-container.widget-panel.compact-header.widget_d
+                .post-container.widget-panel.compact-header
+                  .bar-header.clearfix
+                    .bar-label
+                      .label-text
+                        %a{:href => "#"} Deal
+                  - @recent.each do |post|
+                    .compact-panel.widget_a.add-active.clearfix.deals_item
+                      = link_to post do
+                        .article-image-wrapper
+                          .article-image{:style => "background-image: url('#{post.image}')"}
+                        .article-info
+                          .article-title 
+                            = post.title
+                .post-container.widget-panel.compact-header
                   .bar-header.clearfix
                     .bar-label
                       .label-text
@@ -80,10 +69,8 @@
                     - @trending.each do |post|
                       .loop.widget-loop
                         .overlay-panel.add-active.clearfix
-                          .article-image-wrapper.b-lazy.b-loaded{:style => "background: url('#{post.image}');"}
-                          .article-title-wrapper
-                            %h4 
-                              = link_to post do
-                                = truncate(post.title, length: 48)
-                            .aa_item_info_block
-                              %span.aa_item_time 4 days ago
+                          = link_to post do
+                            .article-image-wrapper.b-lazy.b-loaded{:style => "background: url('#{post.image}');"}
+              .ads.dpode
+                - @social.each do |p|
+                  = p.ads2.html_safe

@@ -47,4 +47,3 @@ gem 'better_errors'
 gem 'ckeditor'
 gem "active_admin_paranoia" , '~> 1.0.9'
 gem 'active_admin_jcrop' #, git: 'git://github.com/Ricardonacif/active_admin_jcrop.git'
-

@@ -4,6 +4,7 @@ class Post < ApplicationRecord
   
   has_many :controlsites
   
+
   acts_as_taggable
   
   scope :published, -> { where.not(published_at: nil) }

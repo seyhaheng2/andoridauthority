@@ -1,0 +1,22 @@
+%div.post.loop-panel.content-panel.add-active.content-panel-default.clearfix
+  .loop-image-wrapper
+    = link_to "", post, class: "loop-link"
+    .loop-image-default.b-lazy.b-loaded.b-loaded{:style => "background-image: url('#{post.image}');"}
+  .loop-info-wrapper
+    .loop-info
+      %h2.article-title.no-padding
+        = link_to post do
+          %span.title-text 
+            = post.title
+      .aa_item_info_block
+        .excerpt 
+          = truncate( raw( sanitize(post.description, :tags => %w(table tr td), :attributes => %w(id class style) ) ), :length => 140, :omission => "...")
+    .bottom-loop-info
+      %span
+        by
+        = link_to post.user.username, root_path
+      %span.aa_item_time  
+        - if post.created_at > Time.now.beginning_of_day
+          = "#{time_ago_in_words(post.created_at)} ago"
+        - else
+          = post.created_at.strftime("%b %d, %Y")

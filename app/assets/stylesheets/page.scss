@@ -1,0 +1,202 @@
+h1.main-title {
+    margin: 21px 2px 38px;
+}
+h1.main-title, h1.page-title, .billboard-wrapper h1.main-title {
+    color: #3f3f3f !important;
+    font-family: Open Sans ,sans-serif;
+    font-weight: 800 !important;
+    font-size: 52px;
+    letter-spacing: -1.5pt;
+    text-transform: none;
+    line-height: 60px;
+}
+.single-page div[id^="content-anchor-inner"] {
+    font-family: Open Sans ,sans-serif;
+    font-size: 17px;
+    color: #787878;
+    line-height: 29px;
+    letter-spacing: -0.015em;
+}
+
+.gform_wrapper ul li:after, .gform_wrapper ul li:before, .gform_wrapper ul.gform_fields {
+    padding: 0;
+    margin: 0;
+    overflow: visible;
+}
+
+
+.gform_wrapper ul.gform_fields {
+    margin: 0!important;
+    list-style-type: none;
+    display: block;
+}
+
+.gform_wrapper ul, html>body .entry ul {
+    text-indent: 0;
+}
+
+.single-page ul {
+    list-style: none;
+    padding-left: 50px;
+}
+
+.gform_wrapper *, .gform_wrapper :after, .gform_wrapper :before {
+    box-sizing: border-box!important;
+}
+.aa_departaments_wrapper {
+    margin-top: 33px;
+    border-bottom: 1px solid #eaebec;
+    padding-bottom: 8px;
+}
+.aa_departament {
+    float: left;
+    width: 47.6%;
+    margin-right: 4.8%;
+    margin-bottom: 20px;
+}
+.aa_departament_title, .aa_departament_title a {
+    font-family: Open Sans Extrabold,sans-serif !important;
+    font-size: 16px;
+    color: #52cc39;
+    text-transform: uppercase;
+}
+.single-page .the-content a, .single-page .the-content a:link, .single-page .the-content a:visited {
+    font-family: Open Sans Bold,sans-serif;
+    font-size: 16px;
+}
+.aa_departament_title, .aa_departament_title a {
+    font-family: Open Sans Extrabold,sans-serif !important;
+    font-size: 16px;
+    color: #52cc39;
+    text-transform: uppercase;
+}
+.aa_departament_content {
+    position: relative;
+    background-color: #f1f5f7;
+    min-height: 96px;
+    padding-left: 74px;
+    margin-top: 8px;
+    display: table;
+    width: 100%;
+}
+.aa_support .aa_departament_content:before {
+    background-position: -8px -5px;
+}
+.aa_departament_content:before {
+    content: '';
+    display: block;
+    width: 35px;
+    height: 35px;
+    position: absolute;
+    left: 31px;
+    top: 30px;
+    background-image: url(../images/contact_page_sprite.png);
+    background-size: 182px 50px;
+    background-repeat: no-repeat;
+    background-position: -8px -5px;
+}
+.single-page .the-content a, .single-page .the-content a:link, .single-page .the-content a:visited {
+    font-family: Open Sans Bold,sans-serif;
+    font-size: 16px;
+}
+.aa_departament_content p {
+    margin: 0;
+}
+.single-page p {
+    font-family: Open Sans ,sans-serif;
+    font-size: 17px;
+    color: #787878;
+    margin: 0 0 17px;
+}
+.single-page p, .single-page ul li, .single-page ol li {
+    line-height: 29px;
+    letter-spacing: -0.015em;
+}
+.gform_wrapper input:not([type=radio]):not([type=checkbox]):not([type=submit]):not([type=button]):not([type=image]):not([type=file]) {
+    font-size: inherit;
+    font-family: inherit;
+    padding: 5px 4px;
+    letter-spacing: normal;
+}
+.page .gform_wrapper textarea.medium {
+    height: 190px;
+}
+.gform_wrapper input:not([type=radio]):not([type=checkbox]):not([type=submit]):not([type=button]):not([type=image]):not([type=file]) {
+    font-size: inherit;
+    font-family: inherit;
+    padding: 5px 4px;
+    letter-spacing: normal;
+}
+.gform_wrapper .top_label .gfield_label {
+    display: -moz-inline-stack;
+    display: inline-block;
+    line-height: 1.3;
+    clear: both;
+}
+
+.gform_wrapper label.gfield_label {
+    font-weight: 700;
+    font-size: inherit;
+}
+body .gform_wrapper ul li.gfield {
+    margin-top: 16px;
+    padding-top: 0;
+}
+.gform_wrapper ul li.gfield {
+    clear: both;
+}
+.gform_wrapper form li, .gform_wrapper li {
+    margin-left: 0!important;
+    list-style: none!important;
+    overflow: visible;
+}
+.page .gform_wrapper .gform_footer {
+    text-align: right;
+    margin: 3px 0 0;
+}
+.gform_wrapper .gform_footer {
+    padding: 16px 0 10px;
+    margin: 16px 0 0;
+    clear: both;
+    width: 100%;
+}
+.page .gform_wrapper .gform_footer input.button, .page .gform_wrapper .gform_footer input[type=submit] {
+    margin: 0;
+    font-size: 12px !important;
+    padding: 0 16px;
+    height: 31px;
+}
+.gform_wrapper .gform_footer input.button, .gform_wrapper .gform_footer input[type="submit"] {
+    background: #55cc3a;
+    font-size: 14px !important;
+    padding: 4px 20px;
+}
+input[type="submit"] {
+    border: 0;
+    color: #fff;
+    cursor: pointer;
+    display: inline-block !important;
+    font-weight: normal;
+    margin: 5px 0;
+    padding: 8px 20px;
+}
+@media only screen and (min-width: 641px){
+  .gform_wrapper .top_label input.medium, .gform_wrapper .top_label select.medium {
+      width: calc(50% - 8px);
+  }
+
+  .gform_wrapper textarea.medium {
+      height: 160px;
+      width: 100%;
+  }
+}
+.gform_wrapper .top_label .gfield_label {
+    display: -moz-inline-stack;
+    display: inline-block;
+    line-height: 1.3;
+    clear: both;
+}
+.gform_wrapper label.gfield_label {
+    font-weight: 700;
+    font-size: inherit;
+}
