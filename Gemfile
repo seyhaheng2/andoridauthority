@@ -45,5 +45,8 @@ gem 'active_skin'
 gem "active_admin-sortable_tree"
 gem 'better_errors'
 gem 'ckeditor'
+gem 'betterlorem', '~> 0.1.2'
 gem "active_admin_paranoia" , '~> 1.0.9'
 gem 'active_admin_jcrop' #, git: 'git://github.com/Ricardonacif/active_admin_jcrop.git'
+gem 'magnific-popup-rails', '~> 1.1.0'
+gem 'fitvidsjs_rails'

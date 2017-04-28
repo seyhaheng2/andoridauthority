@@ -17,7 +17,7 @@ class PostsController < ApplicationController
   # GET /posts/1
   # GET /posts/1.json
   def show
-     
+
     if request.path != post_path(@post)
       return redirect_to @post, :status => :moved_permanently
     end

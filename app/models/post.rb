@@ -1,12 +1,12 @@
 class Post < ApplicationRecord
   belongs_to :user
   belongs_to :category
-  
+
   has_many :controlsites
-  
+
 
   acts_as_taggable
-  
+
   scope :published, -> { where.not(published_at: nil) }
   scope :unpublished, -> { where(published_at: nil) }
 
@@ -22,21 +22,25 @@ class Post < ApplicationRecord
   extend FriendlyId
 
   friendly_id :title, use: [:slugged, :history, :finders]
-    
+
   def should_generate_new_friendly_id?
     title_changed?
   end
 
-  scope :of_post, lambda{ 
+  scope :of_post, lambda{
     where("format_post = 'Post'")
   }
-  scope :of_slide, lambda{ 
+  scope :of_slide, lambda{
     where("format_post = 'Slide'")
   }
-  scope :of_trending, lambda{ 
+  scope :of_trending, lambda{
     where("format_post = 'Trending'")
   }
- 
+
+  scope :in_category, lambda{ |cate_id|
+    where("category_id = ?", cate_id)
+  }
+
   def previous
     @post = Post.where(["id < ?", id]).order(:id).last
   end

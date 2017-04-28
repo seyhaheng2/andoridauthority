@@ -34,9 +34,9 @@
                     %a.soc.g.window.activated{:href => "https://plus.google.com/share?url=http://www.androidauthority.com/samsung-pay-early-access-registrations-now-open-india-754530/", :rel => "me", :target => "_blank", :title => "Share on Google +"}
                       %i.fa.fa-youtube
               %p            
-                = image_tag @post.image
-              %p
-                = @post.description.html_safe
+                =link_to image_tag(@post.image), @post.image(:original), :popup=>['original_image', 'height=700,width=900'],class: 'image-link'
+
+              = @post.description.html_safe
               .aa_item_info_block.aa_bottom_info_block
                 .postinfo
                   .post-categories

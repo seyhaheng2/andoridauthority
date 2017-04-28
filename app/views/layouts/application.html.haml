@@ -2,8 +2,8 @@
   %head
     %title= @meta_title
     %meta{:content => "#{@meta_description}", :name => "description"}
-    = csrf_meta_tags 
-    = stylesheet_link_tag    'application', media: 'all' 
+    = csrf_meta_tags
+    = stylesheet_link_tag    'application', media: 'all'
     = javascript_include_tag 'application'
     %script#dsq-count-scr{:async => "", :src => "//xnxx-5.disqus.com/count.js"}
 
@@ -17,13 +17,16 @@
             %img{:src => "https://lh3.googleusercontent.com/-1cqCUhylYcs/V5XRVj94upI/AAAAAAAAAso/f7HeT0UjGoE4ZRy7WOFjRRiMuxpHBBYpwCL0B/w302-h42-no/Amazing-Hotel.jpg"}
       .topbar_block#sticky-bar
         .brand-logo
-          = link_to "", root_path, class: "sticky-logo"
+          - if p.logo.present?
+            = link_to "", root_path, class: "sticky-logo", style: 'background-image: url(#{p.logo});'
+          - else
+            = link_to "", root_path, class: "sticky-logo", style: 'background-image: url(assets/aa_logo_new.svg);'
         %nav.standard-menu
           %ul
             - @categories.each do |cate|
-              %li 
+              %li
                 = link_to cate.name, cate
-            %li 
+            %li
               %a{:href => "#",class: "more"} More
               %nav#section-menu-more
                 %ul
@@ -70,13 +73,16 @@
     - else
       .topbar#sticky-bar
         .brand-logo
-          = link_to "", root_path, class: "sticky-logo"
+          - if p.logo.present?
+            = link_to "", root_path, class: "sticky-logo", style: "background-image: url(#{p.logo});"
+          - else
+            = link_to "", root_path, class: "sticky-logo", style: 'background-image: url(assets/aa_logo_new.svg);'
         %nav.standard-menu
           %ul
             - @categories.each do |cate|
-              %li 
+              %li
                 = link_to cate.name, cate
-            %li 
+            %li
               %a{:href => "#",class: "more"} More
               %nav#section-menu-more
                 %ul
@@ -86,29 +92,42 @@
         %nav.social-share.pull-right
           %ul
             - @social.each do |f|
-              %li.none
+              %li
                 - if f.facebook.present?
                   = link_to f.facebook, target: :_blank do
                     %i.fa.fa-facebook
-              %li.none
+              %li
                 - if f.twitter.present?
                   = link_to f.twitter, target: :_blank do
                     %i.fa.fa-twitter
-              %li.none
+              %li
                 - if f.youtube.present?
                   = link_to f.youtube, target: :_blank do
                     %i.fa.fa-youtube
-              %li.none
+              %li
                 - if f.pinterest.present?
                   = link_to f.pinterest, target: :_blank do
                     %i.fa.fa-pinterest
-              %li.none
+              %li
                 - if f.google.present?
                   = link_to f.google, target: :_blank do
                     %i.fa.fa-google-plus
-            %li.none
-              = link_to '#', target: :_blank do
+            %li.drop
+              = link_to '#',class: 'link_dropdown' do
                 %i.fa.fa-linode
+              %ul.aa_sticky_soc_more_wrap.aa_sticky_dropdown
+                .menu-aa-new-footer-menu-container
+                  %ul#menu-aa-new-footer-menu.menu
+                    %li.menu-item.menu-item-type-custom.menu-item-object-custom.menu-item-727152
+                      %a{:href => "/about"} About
+                    %li.menu-item.menu-item-type-post_type.menu-item-object-page.menu-item-727155
+                      %a{:href => "http://www.androidauthority.com/contact/"} Contact
+                    %li.menu-item.menu-item-type-custom.menu-item-object-custom.menu-item-750721
+                      %a{:href => "/jobs/"} Jobs
+                    %li.menu-item.menu-item-type-post_type.menu-item-object-page.menu-item-727153
+                      %a{:href => "http://www.androidauthority.com/advertise/"} Advertise
+                    %li.privacy-policy-icon.menu-item.menu-item-type-custom.menu-item-object-custom.menu-item-747189
+                      %a{:href => "http://www.androidauthority.com/privacy-policy/"} Privacy Policy
 
 
               %li.search
@@ -125,17 +144,5 @@
               %a{:href => "#"} LG G6
             %li
               %a{:href => "#"} PIXEL xl
-    
-  = yield 
-      
 
-
-
-
-
-
-
-
-
-
-
+  = yield

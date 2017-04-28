@@ -32,7 +32,7 @@ ActiveAdmin.register Post do
 
   form do |f|
     inputs "New Post" do
-      input :title
+      f.input :title
       f.input :image, as: :file, hint: f.object.image.present? \
         ? f.template.image_tag(f.object.image)
         : f.template.content_tag(:span, "no cover page yet")

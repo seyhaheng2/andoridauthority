@@ -11,13 +11,13 @@
                   .overlay
                 .slide_footer
                   .aa_hfp_cat_block.aa_cat_name_block
-                    = link_to post.category.name, root_path 
-                  %h3.aa_hfp_title 
+                    = link_to post.category.name, root_path
+                  %h3.aa_hfp_title
                     = link_to post.title, post
                   %span.aa-item-description.aa_hfp_author
                     by
                     = link_to post.user.username, '#'
-                  %span.aa_item_time.aa-item-description 
+                  %span.aa_item_time.aa-item-description
                     - if post.created_at > Time.now.beginning_of_day
                       = "#{time_ago_in_words(post.created_at)} ago"
                     - else
@@ -38,7 +38,7 @@
                 .bar-label
                   .label-text Latest News
             .content-inner.clearfix
-              = render @posts 
+              = render @posts
               = paginate @posts
         .col-md-4.mobile_display
           .content-panel.loop-sidebar-right
@@ -58,7 +58,7 @@
                         .article-image-wrapper
                           .article-image{:style => "background-image: url('#{post.image}')"}
                         .article-info
-                          .article-title 
+                          .article-title
                             = post.title
                 .post-container.widget-panel.compact-header
                   .bar-header.clearfix

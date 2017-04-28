@@ -14,4 +14,6 @@
 //= require jquery_ujs
 //= require ajquery
 //= require ckeditor/init
+//= require magnific-popup
+//= require fitvids.js
 

@@ -1,8 +1,12 @@
+a img{
+  outline: none;
+}
 p img{
   max-width: 100%;
   height: auto;
+  outline: none;
 }
-h1.main-title { 
+h1.main-title {
   margin: 20px 2px 25px;
 }
 h1.main-title, h1.page-title, .billboard-wrapper h1.main-title {
@@ -29,7 +33,7 @@ h1.main-title, h1.page-title, .billboard-wrapper h1.main-title {
 .single-page p, .single-page ul li, .single-page ol li {
   line-height: 29px;
   letter-spacing: -0.015em;
-} 
+}
 .single-page p a {
   font-family: Open Sans ,sans-serif;
   font-size: 16px;
@@ -344,4 +348,19 @@ a.aa_source_link, a.aa_via_link{
     &:hover{
         color: #55cc3a;
     }
+}
+.none{
+    display: none;
+}
+.block{
+    display: block;
+}
+video {
+    max-width: 100%;
+    height: auto;
+}
+iframe,
+embed,
+object {
+    max-width: 100%;
 }

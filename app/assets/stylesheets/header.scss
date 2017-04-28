@@ -59,13 +59,13 @@
           font-weight: 600;
         }
         &:active{
-         text-decoration: none; 
+         text-decoration: none;
         }
         &:focus{
-         text-decoration: none; 
+         text-decoration: none;
         }
         &:visited{
-         text-decoration: none; 
+         text-decoration: none;
         }
       }
     }
@@ -96,7 +96,7 @@
 }
 .sticky-logo{
   background-size: 233px 106px;
-  background-image: url(aa_logo_new.svg);
+  // background-image: url(aa_logo_new.svg);
   background-repeat: no-repeat;
   background-position: bottom right;
   display: block;
@@ -166,6 +166,14 @@
       }
     }
   }
+  .drop{
+    a{
+      z-index: 999;
+      &:hover{
+        color: #11dda4;
+      }
+    }
+  }
   .search{
     padding: 0px 20px;
     margin-left: 20px;
@@ -175,7 +183,7 @@
     text-align: center;
     a{
       font-size: 25px;
-      padding: 20px 4px 0 !important;  
+      padding: 20px 4px 0 !important;
     }
   }
 }
@@ -223,13 +231,13 @@
           font-weight: 600;
         }
         &:active{
-         text-decoration: none; 
+         text-decoration: none;
         }
         &:focus{
-         text-decoration: none; 
+         text-decoration: none;
         }
         &:visited{
-         text-decoration: none; 
+         text-decoration: none;
         }
       }
     }
@@ -298,23 +306,110 @@
   background: -webkit-linear-gradient(left,rgba(111,198,18,0) 0,rgba(0,225,190,0) 100%);
   background: linear-gradient(to right,rgba(111,198,18,0) 0,rgba(0,225,190,0) 100%);
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#6fc612',endColorstr='#00e1be',GradientType=1);
- 
+
 }
 .after-header{
     padding-top: 0;
     margin-bottom: 0 !important;
-    overflow: visible;
+    // overflow: visible;
     position: relative;
 }
 
+#aa_sticky_soc_wrapper ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+ul.aa_sticky_soc_more_wrap {
+    background: #fff;
+    position: absolute;
+    border-radius: 3px;
+    right: 3px;
+    top: 17px;
+    min-width: 159px;
+    padding: 14px 0!important;
+    box-shadow: 0 2px 5px 1px rgba(0,0,0,0.14);
+    -webkit-box-shadow: 0 2px 5px 1px rgba(0,0,0,0.14);
+}
+.aa_sticky_dropdown, .aa_sticky_dropdown.visible {
+    transition: all .3s ease-out;
+    -webkit-transition: all .3s ease-out;
+}
+.aa_sticky_soc_more_wrap.visible ul li a {
+    opacity: 1;
+    transition: all .3s ease;
+    -webkit-transition: all .3s ease;
+    transition-delay: .3s;
+    -webkit-transition-delay: .3s;
+}
+.aa_sticky_soc_more_wrap ul li a {
+    font-family: Open Sans,sans-serif;
+    font-size: 13px;
+    color: #a5a5a5;
+    display: block;
+    padding: 0 10px 16px;
+    letter-spacing: -0.02em;
+    // opacity: 0;
+    transition: all .3s ease;
+    -webkit-transition: all .3s ease;
+}
+#aa_sticky_soc_wrapper ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+.menu-aa-new-footer-menu-container{
+  ul{
+    padding-top: 0px;
+    .menu-item{
+      float: left;
+      width: 100%;
+      a{
+        color: #a5a5a5;
+        font-family: Open Sans,sans-serif;
+        font-size: 13px;
+        padding: 5px 12px 25px 20px!important;
+        position: relative;
+        display: block;
+        font-weight: 600;
+        text-transform: uppercase;
+        text-align: left;
+        height: 35px;
+        &:hover{
+          a{
+            color: red;
+          }
+        }
+      }
+    }
+  }
+}
 
+.onclick-menu:before {
+    content: "More";
+}
+.onclick-menu:focus {
+    /* clicking on label should toggle the menu */
+    pointer-events: none;
+}
+.onclick-menu:focus .onclick-menu-content {
+    /*  opacity is 1 in opened state (see below) */
+    opacity: 1;
+    visibility: visible;
 
+    /* don't let pointer-events affect descendant elements */
+    pointer-events: auto;
+}
+.onclick-menu-content {
+    position: absolute;
+    z-index: 1;
 
+    /* use opacity to fake immediate toggle */
+    opacity: 0;
+    visibility: hidden;
+    transition: visibility 0.5s;
+}
 
-
-
-
-
-
-
-
+.aa_sticky_soc_more_wrap{
+  display: none;
+}
